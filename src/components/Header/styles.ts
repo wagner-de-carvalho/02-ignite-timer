@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
       width: 3rem;
       height: 3rem;
       display: flex;
-      justify-items: center;
+      justify-content: center;
       align-items: center;
 
       color: ${(props) => props.theme['gray-100']};
