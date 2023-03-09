@@ -8,8 +8,11 @@ import {
   StartCountDownButton,
   TaskInput,
 } from './styles'
+import { useState } from 'react'
 
 export function Home() {
+  const [task, setTask] = useState('');
+
   return (
     <HomeContainer>
       <form>
@@ -19,6 +22,8 @@ export function Home() {
             placeholder="Dê um nome para o seu projeto"
             list="task-suggestion"
             id="task"
+            onChange={(e) => setTask(e.target.value)}
+            value={task}
           />
 
           <datalist id="task-suggestion">
@@ -49,7 +54,7 @@ export function Home() {
           <span>0</span>
         </CountDownContainer>
 
-        <StartCountDownButton disabled type="submit">
+        <StartCountDownButton disabled={!task} type="submit">
           <Play size={24} />
           Começar
         </StartCountDownButton>
